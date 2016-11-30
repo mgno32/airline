@@ -24,8 +24,8 @@ DROP TABLE IF EXISTS `order`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `order` (
   `order_id` int(11) NOT NULL,
-  `cus_id` varchar(45) NOT NULL,
-  `flight_id` varchar(45) NOT NULL,
+  `cus_id` int(11) NOT NULL,
+  `flight_id` int(11) NOT NULL,
   `pay_station` binary(1) NOT NULL,
   PRIMARY KEY (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-29 22:23:49
+-- Dump completed on 2016-12-01  0:30:58
