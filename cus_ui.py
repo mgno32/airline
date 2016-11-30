@@ -4,9 +4,8 @@ import cus_log
 #search_flight():
 #choose departure and arrial and date
 #return tuples of flight
-
-#make_order():
-#cancel_order():
-#change_order():
+#order_flight():
+#cancel_flight():
+#change_flight():
 #check_order():
 
