@@ -16,33 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `flight`
+-- Table structure for table `orders`
 --
 
-DROP TABLE IF EXISTS `flight`;
+DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `flight` (
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL,
+  `cus_id` int(11) NOT NULL,
   `flight_id` int(11) NOT NULL,
-  `company` varchar(20) NOT NULL,
-  `flight_name` varchar(20) NOT NULL,
-  `dept_time` datetime(6) NOT NULL,
-  `arrv_time` datetime(6) NOT NULL,
-  `seat` int(8) NOT NULL,
-  `price` int(8) NOT NULL,
-  `real_dept_time` datetime(6) DEFAULT NULL,
-  `real_arrv_time` datetime(6) DEFAULT NULL,
-  PRIMARY KEY (`flight_id`)
+  `state` enum('unknown','settled','canceled','changed') NOT NULL,
+  PRIMARY KEY (`order_id`),
+  KEY `cus_order` (`cus_id`),
+  KEY `flight_order_idx` (`flight_id`),
+  CONSTRAINT `cus_order` FOREIGN KEY (`cus_id`) REFERENCES `customer_login` (`customer_id`),
+  CONSTRAINT `flight_order` FOREIGN KEY (`flight_id`) REFERENCES `flight` (`flight_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `flight`
+-- Dumping data for table `orders`
 --
 
-LOCK TABLES `flight` WRITE;
-/*!40000 ALTER TABLE `flight` DISABLE KEYS */;
-/*!40000 ALTER TABLE `flight` ENABLE KEYS */;
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
