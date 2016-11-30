@@ -2,7 +2,7 @@ import cus_log
 
 #todo
 #search_flight():
-#choose departure and arrial and date
+#choose departure and arrival and date
 #return tuples of flight
 
 #make_order():
