@@ -10,5 +10,10 @@ import mysql
 #change_seat()
 #change_price()
 
-#add_flight:
+#add_flight()
 #change all
+
+#delete_flight()
+
+#search_flight:
+#search 
