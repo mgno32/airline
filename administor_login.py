@@ -2,10 +2,6 @@
 # -*- coding: utf-8 -*-
 import os, sys, string
 import MySQLdb
-#todo
-#log_in()
-#change_password
-#sign_up
 
 #if wrong password return 0, right password return id
 def admin_log_in(admin_email,admin_password):
@@ -53,3 +49,4 @@ def change_password(admin_id,new_password,new1_password):
         return  True
     else:
         return False
+
