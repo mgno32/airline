@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `airline` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `airline`;
 -- MySQL dump 10.13  Distrib 5.7.16, for Linux (x86_64)
 --
 -- Host: localhost    Database: airline
@@ -26,6 +28,9 @@ CREATE TABLE `customer` (
   `customer_id` int(11) NOT NULL,
   `customer_password` varchar(45) NOT NULL,
   `customer_email` varchar(45) NOT NULL,
+  `customer_sfz` varchar(45) NOT NULL,
+  `customer_name` varchar(80) NOT NULL,
+  `customer_tel` varchar(45) NOT NULL,
   PRIMARY KEY (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -36,6 +41,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES (20000,'123','happygirlzt@gmail.com','51010000000','xiaohe','155000000');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-03  0:29:58
+-- Dump completed on 2016-12-03  2:02:07
