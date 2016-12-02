@@ -18,29 +18,12 @@ USE `airline`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `administor`
+-- Dumping events for database 'airline'
 --
 
-DROP TABLE IF EXISTS `administor`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `administor` (
-  `administor_id` int(11) NOT NULL,
-  `administor_password` varchar(45) NOT NULL,
-  `administor_email` varchar(45) NOT NULL,
-  PRIMARY KEY (`administor_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
 --
--- Dumping data for table `administor`
+-- Dumping routines for database 'airline'
 --
-
-LOCK TABLES `administor` WRITE;
-/*!40000 ALTER TABLE `administor` DISABLE KEYS */;
-INSERT INTO `administor` VALUES (10000,'125','123@126.com');
-/*!40000 ALTER TABLE `administor` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -51,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-02 20:32:04
+-- Dump completed on 2016-12-02 20:32:05
