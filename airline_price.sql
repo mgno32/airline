@@ -18,32 +18,31 @@ USE `airline`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `orders`
+-- Table structure for table `price`
 --
 
-DROP TABLE IF EXISTS `orders`;
+DROP TABLE IF EXISTS `price`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `orders` (
-  `order_id` int(11) NOT NULL,
-  `cus_id` int(11) NOT NULL,
+CREATE TABLE `price` (
+  `price_id` int(11) NOT NULL,
   `flight_id` int(11) NOT NULL,
-  `state` enum('unknown','settled','canceled','changed') NOT NULL,
-  PRIMARY KEY (`order_id`),
-  KEY `cus_order` (`cus_id`),
-  KEY `flight_order_idx` (`flight_id`),
-  CONSTRAINT `cus_order` FOREIGN KEY (`cus_id`) REFERENCES `customer` (`customer_id`),
-  CONSTRAINT `flight_order` FOREIGN KEY (`flight_id`) REFERENCES `flight` (`flight_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  `seat_lable` enum('F','C','Y') NOT NULL,
+  `discount` double NOT NULL,
+  `original_price` double NOT NULL,
+  PRIMARY KEY (`price_id`),
+  KEY `price_flight_idx` (`flight_id`),
+  CONSTRAINT `price_flight` FOREIGN KEY (`flight_id`) REFERENCES `flight` (`flight_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `orders`
+-- Dumping data for table `price`
 --
 
-LOCK TABLES `orders` WRITE;
-/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+LOCK TABLES `price` WRITE;
+/*!40000 ALTER TABLE `price` DISABLE KEYS */;
+/*!40000 ALTER TABLE `price` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

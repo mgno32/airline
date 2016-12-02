@@ -30,8 +30,7 @@ CREATE TABLE `flight` (
   `flight_name` varchar(20) NOT NULL,
   `dept_time` datetime(6) NOT NULL,
   `arrv_time` datetime(6) NOT NULL,
-  `seat` int(8) NOT NULL,
-  `price` int(8) NOT NULL,
+  `seat_num` int(11) NOT NULL,
   `real_dept_time` datetime(6) DEFAULT NULL,
   `real_arrv_time` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`flight_id`)
@@ -56,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-02 20:32:04
+-- Dump completed on 2016-12-02 21:43:30
