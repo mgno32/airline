@@ -2,15 +2,26 @@
 # -*- coding: utf-8 -*-
 import os, sys, string
 import MySQLdb
-import administor_login
+import cus_login
 
-administor_login.connect()
+cus_login.connect()
+#1.sign_up
+cus_login.sign_up("happygirlzt@gmail.com","123","123","1111111111","ZT","13923332333")
 
-#login
-admin_id = administor_login.admin_log_in("123@126.com","123")
+#2.login
+cus_id = cus_login.cus_log_in("happygirlzt@gmail.com","125")
 
-#1 change password:
-#1.1input old one and check
-#1.2input new one, twice
-if administor_login.check_passwd("123",admin_id):
-    print(administor_login.change_password(admin_id,"125","125"))
+#3 change password:
+#3.1input old one and check
+#3.2input new one, twice
+if cus_login.check_passwd("125",cus_id):
+    cus_login.change_password(cus_id,"123","123")
+
+#4 change sfz
+cus_login.change_sfz(cus_id,"51010000000")
+
+#5 change name
+cus_login.change_name(cus_id,"xiaohe")
+
+#6 change tel
+cus_login.change_tel(cus_id,"155000000")
