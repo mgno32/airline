@@ -1,4 +1,7 @@
-import mysql
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import os, sys, string
+import MySQLdb
 
 #todo
 

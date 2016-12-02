@@ -1,4 +1,7 @@
-import mysql
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import os, sys, string
+import MySQLdb
 
 #todo
 #changeflight:
@@ -16,4 +19,16 @@ import mysql
 #delete_flight()
 
 #search_flight:
-#search 
+#search
+def connect():
+	global curAdmin
+	global connAdmin
+	try:
+		connAdmin = MySQLdb.connect(host='127.0.0.1',user='root',passwd='',db='airline',charset='utf8')
+        curAdmin = connAdmin.cursor() 
+		
+	except Exception, e:
+		print e
+		sys.exit()
+
+
