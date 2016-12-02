@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `customer`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customer` (
   `customer_id` int(11) NOT NULL,
-  `customerc_password` varchar(45) NOT NULL,
+  `customer_password` varchar(45) NOT NULL,
   `customer_email` varchar(45) NOT NULL,
   PRIMARY KEY (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-02 21:43:30
+-- Dump completed on 2016-12-02 23:42:24
