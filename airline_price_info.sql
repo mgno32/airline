@@ -16,28 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `administor`
+-- Table structure for table `price_info`
 --
 
-DROP TABLE IF EXISTS `administor`;
+DROP TABLE IF EXISTS `price_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `administor` (
-  `administor_id` int(11) NOT NULL,
-  `administor_password` varchar(45) NOT NULL,
-  `administor_email` varchar(45) NOT NULL,
-  PRIMARY KEY (`administor_id`)
+CREATE TABLE `price_info` (
+  `price_id` int(11) NOT NULL,
+  `flight_id` int(11) NOT NULL,
+  `seat_lable` enum('F','C','Y') NOT NULL,
+  `discount` double NOT NULL,
+  `original_price` double NOT NULL,
+  PRIMARY KEY (`price_id`),
+  KEY `price_flight_idx` (`flight_id`),
+  CONSTRAINT `price_flight` FOREIGN KEY (`flight_id`) REFERENCES `flight` (`flight_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `administor`
+-- Dumping data for table `price_info`
 --
 
-LOCK TABLES `administor` WRITE;
-/*!40000 ALTER TABLE `administor` DISABLE KEYS */;
-INSERT INTO `administor` VALUES (10000,'125','123@126.com'),(10001,'111','mgno32@outlook.com');
-/*!40000 ALTER TABLE `administor` ENABLE KEYS */;
+LOCK TABLES `price_info` WRITE;
+/*!40000 ALTER TABLE `price_info` DISABLE KEYS */;
+/*!40000 ALTER TABLE `price_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
