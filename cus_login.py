@@ -9,7 +9,6 @@ def cus_log_in(cus_email,cus_password):
         sql = "select * from airline.customer where customer_email = '%s' and customer_password = '%s'"%(cus_email,cus_password)
         cur_cus.execute(sql)
         result = cur_cus.fetchone()
-        print(result)
         return result[0]
     except Exception:
         return 0
